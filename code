@@ -1,0 +1,53 @@
+import random
+
+#list of answers
+answersList = [ "It is certain.",
+                "It is decidedly so.",
+                "Without a doubt.",
+                "Yes definitely.", 
+                "You may rely on it.",
+                "As I see it, yes.",
+                "Most likely.",
+                "Outlook good.",
+                "Yes",
+                "Signs point to yes.",
+
+                "Reply hazy, try again.",
+                "Ask again later.",
+                "Better not tell you now.",
+                "Cannot predict now.",
+                "Concentrate and ask again.",
+
+                "Don't count on it.",
+                "My reply is no.",
+                "My sources say no.",
+                "Outlook not so good.",
+                "Very doubtful.",
+                ]
+
+
+def magic8ballwork():
+
+    while True:
+    
+        question = input("What is your question? ")
+
+        #random answer
+        randomanswer = random.randint(0,20)
+        answer = answersList[randomanswer]
+
+        #user must input a question mark after question in order for 8ball to have a response
+        if '?' in question:
+            print(namequestion, answer)
+        elif question == 'Done' or question == 'done':
+            print('Thanks for playing!')
+            break
+        else:
+            print(f'{namequestion}, Please enter a question')
+    
+
+##MAIN METHOD
+
+namequestion = input("What is your name? ")
+
+magic8ballwork()
